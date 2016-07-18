@@ -21,32 +21,29 @@ const icons = {
 }
 
 exports.request = (query, url='https://search.elastic.co/suggest', timeout=1000) => {
-  return new Promise((resolve, reject) => {
-    if (query.q === null || query.q.trim().length == 0) {
-      resolve([])
-    }
-    got(url, {
-      json: true,
-      timeout: timeout,
-      retries: 0,
-      query: query
-    })
-    .then(res => {
-      const items = res.body.hits.map(hit => {
-        var product = _.find(Object.keys(icons), (name) => { return hit.section.toLowerCase().includes(name) })
-        let icon = product !== undefined ? icons[product] : icons['elasticsearch']
+  if (query.q === null || query.q.trim().length == 0) {
+    return Promise.resolve([])
+  }
+  return got(url, {
+    json: true,
+    timeout: timeout,
+    retries: 0,
+    query: query
+  })
+  .then(res => {
+    const items = res.body.hits.map(hit => {
+      var product = _.find(Object.keys(icons), (name) => { return hit.section.toLowerCase().includes(name) })
+      let icon = product !== undefined ? icons[product] : icons['elasticsearch']
 
-        return {
-          title: striptags(hit.title),
-          subtitle: striptags(hit.section),
-          arg: 'https://www.elastic.co' + hit.url,
-          icon: { path: icon }
-        }
-      })
-
-      resolve(items)
+      return {
+        title: striptags(hit.title),
+        subtitle: striptags(hit.section),
+        arg: 'https://www.elastic.co' + hit.url,
+        icon: { path: icon }
+      }
     })
-    .catch(error => reject(error))
+
+    return Promise.resolve(items)
   })
 }
 

@@ -6,5 +6,4 @@ const alfy = require('alfy')
 let query = parser.parse(alfy.input)
 request.request(query)
   .then(items => { alfy.output(items) })
-  .catch(err => { alfy.error(err) })
 

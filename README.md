@@ -60,4 +60,6 @@ This is licensed under Apache2 license, because [open source...](https://www.fli
 
 ## Thanks
 
-Thanks to [Colin](https://github.com/colings86) for testing, feedback, fixes and documentation improvements.
+* [Colin](https://github.com/colings86) for testing, feedback, fixes and documentation improvements.
+* [Sindre Sorhus](https://github.com/sindresorhus) for code improvements
+
