@@ -2,7 +2,11 @@
   "name": "alfred-elastic",
   "version": "1.0.0",
   "author": "Alexander Reelsen",
-  "license": "Apache2",
+  "license": "Apache-2.0",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/spinscale/alfred-workflow-elastic-docs"
+  },
   "scripts": {
     "package": "rm -f elastic.alfredworkflow && npm run babel && rm -fr node_modules && npm install --production && zip -q -X -r elastic.alfredworkflow icon.png index.js info.plist node_modules icon.png logos lib test && npm install",
     "test": "export AVA='alfy-works-with-this-for-tests' && npm run babel && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
