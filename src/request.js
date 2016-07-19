@@ -20,11 +20,11 @@ const icons = {
 
 }
 
-exports.request = (query, url='https://search.elastic.co/suggest', timeout=1000) => {
+exports.request = (query, opts, url='https://search.elastic.co/suggest') => {
   if (query.q === null || query.q.trim().length == 0) {
     return Promise.resolve([])
   }
-  return alfy.fetch(url, { query: query, timeout: timeout, retries: 0 })
+  return alfy.fetch(url, Object.assign(opts, { query: query }))
   .then(res => {
     const items = res.hits.map(hit => {
       var product = _.find(Object.keys(icons), (name) => { return hit.section.toLowerCase().includes(name) })

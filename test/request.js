@@ -37,7 +37,7 @@ describe('request', () => {
   beforeEach(() => { requestCount = 0 })
 
   it('should not be sent when empty', (done) => {
-    request.request({ q: ' ' }, 'http://localhost:8000/suggest')
+    request.request({ q: ' ' }, {}, 'http://localhost:8000/suggest')
       .catch(err => done(err))
       .then(items => {
         expect(items).to.have.length(0)
@@ -47,7 +47,7 @@ describe('request', () => {
   })
 
   it('should be stripped from html tags in title', (done) => {
-    request.request({ q: 'foo' }, 'http://localhost:8000/suggest')
+    request.request({ q: 'foo' }, {}, 'http://localhost:8000/suggest')
       .then(items => {
         expect(items[0].title).to.equal('Open')
         expect(requestCount).to.equal(1)
@@ -57,7 +57,7 @@ describe('request', () => {
   })
 
   it('should use different icons', (done) => {
-    request.request({ q: 'foo' }, 'http://localhost:8000/suggest')
+    request.request({ q: 'foo' }, {}, 'http://localhost:8000/suggest')
       .then(items => {
         expect(items[0].icon.path).to.match(/logos\/elasticsearch.png/)
         expect(items[1].icon.path).to.match(/logos\/logstash.png/)
@@ -69,7 +69,7 @@ describe('request', () => {
   })
 
   it('should return reject promise on error', (done) => {
-    request.request({ q: 'foo' }, 'http://localhost:8000/suggest', 1)
+    request.request({ q: 'foo' }, { timeout: 1, retries: 0}, 'http://localhost:8000/suggest')
       .catch(err => {
         expect(err.message).to.equal('Connection timed out on request to localhost:8000')
         done()
