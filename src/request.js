@@ -1,5 +1,5 @@
 'use strict'
-const got = require('got')
+const alfy = require('alfy')
 const _ = require('underscore')
 const striptags = require('striptags')
 const path = require('path')
@@ -24,14 +24,9 @@ exports.request = (query, url='https://search.elastic.co/suggest', timeout=1000)
   if (query.q === null || query.q.trim().length == 0) {
     return Promise.resolve([])
   }
-  return got(url, {
-    json: true,
-    timeout: timeout,
-    retries: 0,
-    query: query
-  })
+  return alfy.fetch(url, { query: query, timeout: timeout, retries: 0 })
   .then(res => {
-    const items = res.body.hits.map(hit => {
+    const items = res.hits.map(hit => {
       var product = _.find(Object.keys(icons), (name) => { return hit.section.toLowerCase().includes(name) })
       let icon = product !== undefined ? icons[product] : icons['elasticsearch']
 
