@@ -1,4 +1,6 @@
 'use strict';
+// this allows to import alfy as some tempdirs get created automatically
+process.env['AVA'] = 'anything'
 const parser = require('./lib/parser')
 const request = require('./lib/request')
 
