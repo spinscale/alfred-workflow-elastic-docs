@@ -6,7 +6,7 @@ const products = {
     // beats
     'b': 'Libbeat', 'mb': 'Metricbeat', 'pb' : 'Packetbeat', 'tb' : 'Topbeat', 'wb' : 'Winlogbeat', 'fb': 'Filebeat',
     // elasticsearch
-    'e': 'Elasticsearch', 'es': 'Elasticsearch', 'esg': 'Elasticsearch/Definitive Guide', 'esr': 'Elasticsearch/Reference',
+    'e': 'Elasticsearch', 'es': 'Elasticsearch', 'esg': 'Elasticsearch/Definitive Guide', 'esr': 'Elasticsearch/Reference', 'esp': 'Elasticsearch/Plugins',
     // xpack
     'x': 'XPack', 'm': 'Marvel', 'w': 'Watcher', 's': 'Shield', 'g': 'Graph',
     // logstash
