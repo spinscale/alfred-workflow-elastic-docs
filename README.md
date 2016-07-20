@@ -30,6 +30,7 @@ You can search across the whole documentation, or you can limit by a product by 
 | `es`   | Elasticsearch                        |
 | `esg`  | Elasticsearch - The definitive guide |
 | `esr`  | Elasticsearch - Reference            |
+| `esp`  | Elasticsearch - Plugins              |
 | `x`    | Xpack                                |
 | `m`    | Marvel                               |
 | `w`    | Watcher                              |
