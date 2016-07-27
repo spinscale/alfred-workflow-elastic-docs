@@ -20,12 +20,15 @@ const icons = {
 
 }
 
-exports.request = (query, opts, url='https://search.elastic.co/suggest') => {
+exports.request = (query, opts = {}, url='https://search.elastic.co/suggest') => {
   if (query.q === null || query.q.trim().length == 0) {
     return Promise.resolve([])
   }
   return alfy.fetch(url, Object.assign(opts, { query: query }))
   .then(res => {
+    if (res.hits.length == 0) {
+      return Promise.resolve([{ title: 'No results found', icon: { path: rootDir + '/icon.png' } }])
+    }
     const items = res.hits.map(hit => {
       var product = _.find(Object.keys(icons), (name) => { return hit.section.toLowerCase().includes(name) })
       let icon = product !== undefined ? icons[product] : icons['elasticsearch']

@@ -21,7 +21,7 @@ const json = {
   ]
 }
 
-describe('request', () => {
+describe('request with response', () => {
 
   let webserver
   let requestCount = 0
@@ -32,6 +32,10 @@ describe('request', () => {
       res.end(JSON.stringify(json))
     });
     webserver.listen(8000)
+  })
+
+  after((done) => {
+    webserver.close(done)
   })
 
   beforeEach(() => { requestCount = 0 })
@@ -75,4 +79,29 @@ describe('request', () => {
         done()
       })
    })
+
+})
+
+describe('request without response', () => {
+  let webserver
+
+  before(() => {
+    webserver = http.createServer((req, res) => {
+      res.end(JSON.stringify({ hits: [] }))
+    });
+    webserver.listen(8000)
+  })
+
+  after((done) => {
+    webserver.close(done)
+  })
+
+  it('should return not found message on zero hits', done => {
+    request.request({ q: 'foo' }, {}, 'http://localhost:8000/suggest')
+      .then(items => {
+        expect(items[0].title).to.equal('No results found')
+        done()
+      })
+      .catch(err => { done(err) })
+  })
 })
