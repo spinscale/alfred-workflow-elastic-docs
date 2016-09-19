@@ -36,11 +36,13 @@ You can search across the whole documentation, or you can limit by a product by 
 | `w`    | Watcher                              |
 | `s`    | Shield                               |
 | `g`    | Graph                                |
+| `r`    | Reporting                            |
 | `l`    | Logstash                             |
 | `ls`   | Logstash                             |
 | `k`    | Kibana                               |
 | `h`    | Apache Hadoop                        |
 | `c`    | Cloud                                |
+| `ce`   | Cloud Enterprise                     |
 
 In addition when specifying a product, you can also specify a version like `elastic w 2.3 execute watch`
 

@@ -8,7 +8,7 @@ const products = {
     // elasticsearch
     'e': 'Elasticsearch', 'es': 'Elasticsearch', 'esg': 'Elasticsearch/Definitive Guide', 'esr': 'Elasticsearch/Reference', 'esp': 'Elasticsearch/Plugins',
     // xpack
-    'x': 'XPack', 'm': 'Marvel', 'w': 'Watcher', 's': 'Shield', 'g': 'Graph',
+    'x': 'XPack', 'm': 'Marvel', 'w': 'Watcher', 's': 'Shield', 'g': 'Graph', 'r': 'Reporting',
     // logstash
     'l' : 'Logstash', 'ls': 'Logstash',
     // kibana
@@ -16,7 +16,7 @@ const products = {
     // hadoop
     'h': 'Apache Hadoop',
     // cloud
-    'c': 'Cloud'
+    'c': 'Cloud', 'ce' : 'Cloud Enterprise'
 }
 
 exports.parse = (input) => {
