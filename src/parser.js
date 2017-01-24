@@ -4,7 +4,7 @@ const _ = require('underscore')
 // product matches
 const products = {
     // beats
-    'b': 'Libbeat', 'mb': 'Metricbeat', 'pb' : 'Packetbeat', 'tb' : 'Topbeat', 'wb' : 'Winlogbeat', 'fb': 'Filebeat',
+    'b': 'Libbeat', 'mb': 'Metricbeat', 'pb' : 'Packetbeat', 'tb' : 'Topbeat', 'wb' : 'Winlogbeat', 'fb': 'Filebeat', 'hb' : 'Heartbeat',
     // elasticsearch
     'e': 'Elasticsearch', 'es': 'Elasticsearch', 'esg': 'Elasticsearch/Definitive Guide', 'esr': 'Elasticsearch/Reference', 'esp': 'Elasticsearch/Plugins',
     // xpack
@@ -16,7 +16,11 @@ const products = {
     // hadoop
     'h': 'Apache Hadoop',
     // cloud
-    'c': 'Cloud', 'ce' : 'Cloud Enterprise'
+    'c': 'Cloud', 'ce' : 'Cloud Enterprise',
+    // stack
+    's': 'Elastic Stack',
+    // clients
+    'cs': 'Clients'
 }
 
 exports.parse = (input) => {
