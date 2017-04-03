@@ -8,15 +8,13 @@ const json = {
   hits: [
     {
       title: "<em>Open</em>",
-      tags: "Clients",
-      section: "Docs/",
-      url: "/guide/en/elasticsearch/client/curator/4.0/open.html"
+      breadcrumbs: "Docs/",
+      page_url: "/guide/en/elasticsearch/client/curator/4.0/open.html"
     },
     {
       title: "<em>open</em> » Examples",
-      tags: "Clients",
-      section: "Docs/Logstash/",
-      url: "/guide/en/logstash/foo/examples.html#ex_open"
+      breadcrumbs: "Docs/Logstash/",
+      page_url: "/guide/en/logstash/foo/examples.html#ex_open"
     }
   ]
 }

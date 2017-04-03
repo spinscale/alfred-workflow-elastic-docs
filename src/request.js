@@ -30,13 +30,13 @@ exports.request = (query, opts = {}, url='https://search.elastic.co/suggest') =>
       return Promise.resolve([{ title: 'No results found', icon: { path: rootDir + '/icon.png' } }])
     }
     const items = res.hits.map(hit => {
-      var product = _.find(Object.keys(icons), (name) => { return hit.section.toLowerCase().includes(name) })
+      var product = _.find(Object.keys(icons), (name) => { return hit.breadcrumbs.toLowerCase().includes(name) })
       let icon = product !== undefined ? icons[product] : icons['elasticsearch']
 
       return {
         title: striptags(hit.title),
-        subtitle: striptags(hit.section),
-        arg: 'https://www.elastic.co' + hit.url,
+        subtitle: striptags(hit.breadcrumbs).replace(/&raquo;/g, '»'),
+        arg: 'https://www.elastic.co' + hit.page_url,
         icon: { path: icon }
       }
     })
