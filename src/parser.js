@@ -38,6 +38,8 @@ exports.parse = (input) => {
   if (product !== undefined && versionMatch !== null) {
     section = section + 'Reference/' + versionMatch[0]
     query = query.substring(versionMatch[0].length + 1)
+  } else {
+    section = section + "Reference/current"
   }
 
   return { q: query, section: section }
