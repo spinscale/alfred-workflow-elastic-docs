@@ -6,21 +6,21 @@ describe('parser', () => {
 
   it('should parse', (done) => {
     expect(parser.parse('foo').q).to.equal('foo')
-    expect(parser.parse('foo').section).to.equal('Docs/')
+    expect(parser.parse('foo').section).to.equal('Learn/Docs/')
     done()
   })
 
   it('should parse products', (done) => {
     expect(parser.parse('w foo bar').q).to.equal('foo bar')
-    expect(parser.parse('w foo').section).to.equal('Docs/Watcher/Reference/current')
-    expect(parser.parse('e foo').section).to.equal('Docs/Elasticsearch/Reference/current')
-    expect(parser.parse('esp foo').section).to.equal('Docs/Elasticsearch/Plugins/Reference/current')
+    expect(parser.parse('w foo').section).to.equal('Learn/Docs/Watcher/Reference/5.5')
+    expect(parser.parse('e foo').section).to.equal('Learn/Docs/Elasticsearch/Reference/5.5')
+    expect(parser.parse('esp foo').section).to.equal('Learn/Docs/Elasticsearch/Plugins/Reference/5.5')
     done()
   })
 
   it('should parse products and versions', (done) => {
     expect(parser.parse('w 2.2 foo bar').q).to.equal('foo bar')
-    expect(parser.parse('w 2.2 foo bar').section).to.equal('Docs/Watcher/Reference/2.2')
+    expect(parser.parse('w 2.2 foo bar').section).to.equal('Learn/Docs/Watcher/Reference/2.2')
     done()
   })
 

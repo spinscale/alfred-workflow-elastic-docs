@@ -23,13 +23,15 @@ const products = {
     'cs': 'Clients'
 }
 
+const CURRENT_VERSION = '5.5'
+
 exports.parse = (input) => {
   let query = input
-  let section = 'Docs/'
+  let section = 'Learn/Docs/'
 
   var product = _.find(Object.keys(products), (key) => { return input.startsWith(key + ' ') })
   if (product !== undefined) {
-    section = 'Docs/' + products[product] + '/'
+    section = 'Learn/Docs/' + products[product] + '/'
     query = input.substring(product.length + 1)
   }
 
@@ -40,7 +42,7 @@ exports.parse = (input) => {
       section = section + 'Reference/' + versionMatch[0]
       query = query.substring(versionMatch[0].length + 1)
     } else {
-      section = section + "Reference/current"
+      section = section + 'Reference/' + CURRENT_VERSION
     }
   }
 
