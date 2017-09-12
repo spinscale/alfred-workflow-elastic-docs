@@ -12,9 +12,9 @@ describe('parser', () => {
 
   it('should parse products', (done) => {
     expect(parser.parse('w foo bar').q).to.equal('foo bar')
-    expect(parser.parse('w foo').section).to.equal('Learn/Docs/Watcher/Reference/5.5')
-    expect(parser.parse('e foo').section).to.equal('Learn/Docs/Elasticsearch/Reference/5.5')
-    expect(parser.parse('esp foo').section).to.equal('Learn/Docs/Elasticsearch/Plugins/Reference/5.5')
+    expect(parser.parse('w foo').section).to.equal('Learn/Docs/Watcher/Reference/5.6')
+    expect(parser.parse('e foo').section).to.equal('Learn/Docs/Elasticsearch/Reference/5.6')
+    expect(parser.parse('esp foo').section).to.equal('Learn/Docs/Elasticsearch/Plugins/Reference/5.6')
     done()
   })
 

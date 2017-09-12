@@ -1,4 +1,6 @@
 'use strict'
+const CURRENT_VERSION = '5.6'
+
 const _ = require('underscore')
 
 // product matches
@@ -22,8 +24,6 @@ const products = {
     // clients
     'cs': 'Clients'
 }
-
-const CURRENT_VERSION = '5.5'
 
 exports.parse = (input) => {
   let query = input
