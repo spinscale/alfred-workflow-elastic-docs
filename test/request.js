@@ -8,12 +8,12 @@ const json = {
   hits: [
     {
       title: "<em>Open</em>",
-      breadcrumbs: "Learn/Docs/Reference/5.6",
+      breadcrumbs: "Learn/Docs/Reference/6.0",
       page_url: "/guide/en/elasticsearch/client/curator/4.0/open.html"
     },
     {
       title: "<em>open</em> » Examples",
-      breadcrumbs: "Learn/Docs/Logstash/Reference/5.6",
+      breadcrumbs: "Learn/Docs/Logstash/Reference/6.0",
       page_url: "/guide/en/logstash/foo/examples.html#ex_open"
     }
   ]
