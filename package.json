@@ -21,7 +21,7 @@
     "babel-cli": "6.10.1",
     "babel-preset-es2015-node4": "2.1.0",
     "chai": "3.5.0",
-    "istanbul": "0.4.4",
-    "mocha": "2.5.3"
+    "istanbul": "0.4.5",
+    "mocha": "5.2.0"
   }
 }
