@@ -1,6 +1,6 @@
 'use strict';
-const parser = require('./lib/parser')
-const request = require('./lib/request')
+const parser = require('./src/parser')
+const request = require('./src/request')
 const alfy = require('alfy')
 
 let query = parser.parse(alfy.input)

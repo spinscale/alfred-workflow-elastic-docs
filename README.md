@@ -10,7 +10,7 @@ An alfred workflow, that queries the Elastic documentation and allows you to ope
 
 You can download the workflow from [the packal alfred workflow repository](http://www.packal.org/), if you don't want to build it yourself.
 
-**Note**: You need to have node.js installed to get up and running. You can check by executing `node --version`, as you need a node version >= 4.0 (which, frankly, should be pretty standard nowadays).
+**Note**: You need to have node.js installed to get up and running. You can check by executing `node --version`, as you need a node version >= 10.0 (which, frankly, should be pretty standard nowadays).
 
 ## Usage
 
@@ -23,26 +23,22 @@ You can search across the whole documentation, or you can limit by a product by 
 | `b`    | libbeat                              |
 | `mb`   | Metricbeat                           |
 | `pb`   | Packetbeat                           |
-| `tb`   | Topbeat                              |
 | `wb`   | Winlogbeat                           |
 | `fb`   | Filebeat                             |
+| `jb`   | Journalbeat                          |
+| `fb`   | Functionbeat                         |
 | `e`    | Elasticsearch                        |
 | `es`   | Elasticsearch                        |
-| `esg`  | Elasticsearch - The definitive guide |
-| `esr`  | Elasticsearch - Reference            |
-| `esp`  | Elasticsearch - Plugins              |
-| `x`    | Xpack                                |
-| `m`    | Marvel                               |
-| `w`    | Watcher                              |
-| `s`    | Shield                               |
-| `g`    | Graph                                |
-| `r`    | Reporting                            |
 | `l`    | Logstash                             |
 | `ls`   | Logstash                             |
 | `k`    | Kibana                               |
-| `h`    | Apache Hadoop                        |
 | `c`    | Cloud                                |
-| `ce`   | Cloud Enterprise                     |
+| `ece`  | Elastic Cloud Enterprise             |
+| `i`    | Infrastructure                       |
+| `cs`   | Clients                              |
+| `sw`   | App Search/Site Search               |
+| `a`    | APM                                  |
+| `apm`  | APM                                  |
 
 In addition when specifying a product, you can also specify a version like `elastic w 2.3 execute watch`
 

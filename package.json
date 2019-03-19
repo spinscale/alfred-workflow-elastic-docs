@@ -1,6 +1,6 @@
 {
   "name": "alfred-elastic",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "author": "Alexander Reelsen",
   "license": "Apache-2.0",
   "repository": {
@@ -8,20 +8,18 @@
     "url": "https://github.com/spinscale/alfred-workflow-elastic-docs"
   },
   "scripts": {
-    "package": "rm -f elastic.alfredworkflow && npm run babel && rm -fr node_modules && npm install --production && zip -q -X -r elastic.alfredworkflow icon.png index.js info.plist node_modules icon.png logos lib test && npm install",
-    "test": "export AVA='alfy-works-with-this-for-tests' && npm run babel && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
-    "babel": "./node_modules/.bin/babel src -d lib --presets es2015-node4"
+    "package": "rm -f elastic.alfredworkflow && rm -fr node_modules && npm install --production && npm run package-zip && npm install",
+    "package-zip": "zip -q -X -r elastic.alfredworkflow icon.png index.js info.plist node_modules icon.png logos src test package.json",
+    "test": "export AVA='alfy-works-with-this-for-tests' && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "dependencies": {
-    "alfy": "0.2.1",
-    "striptags": "2.1.1",
-    "underscore": "1.8.3"
+    "alfy": "0.8.0",
+    "striptags": "3.1.1",
+    "underscore": "1.9.1"
   },
   "devDependencies": {
-    "babel-cli": "6.10.1",
-    "babel-preset-es2015-node4": "2.1.0",
-    "chai": "3.5.0",
+    "chai": "4.2.0",
     "istanbul": "0.4.5",
-    "mocha": "5.2.0"
+    "mocha": "6.0.2"
   }
 }
