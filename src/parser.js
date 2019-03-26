@@ -1,5 +1,5 @@
 'use strict'
-const CURRENT_VERSION = '6.6'
+const CURRENT_VERSION = '6.7'
 
 const _ = require('underscore')
 
@@ -24,7 +24,9 @@ const products = {
     // swiftype
     'sw' : 'Swiftype',
     // apm
-    'a' : 'APM', 'apm' : 'APM'
+    'a' : 'APM', 'apm' : 'APM',
+    // Elastic common schema
+    'ecs' : 'Elastic Common Schema (ecs)'
 }
 
 exports.parse = (input) => {
