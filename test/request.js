@@ -32,7 +32,18 @@ describe('request with response', () => {
   before(() => {
     webserver = http.createServer((req, res) => {
       requestCount++
-      res.end(JSON.stringify(json))
+      let body = []
+      req.on('data', (chunk) => {
+        body.push(chunk);
+      }).on('end', () => {
+        body = Buffer.concat(body).toString();
+        let json_body = JSON.parse(body)
+        if (json_body.filters.all.length == 3) {
+          json.results[0].title.raw = json_body.filters.all[1].product_name + " " + json_body.filters.all[2].product_version
+        }
+        res.end(JSON.stringify(json))
+      });
+
     });
     webserver.listen(8000)
   })
@@ -83,6 +94,16 @@ describe('request with response', () => {
       })
    })
 
+
+   it('should support product/version', (done) => {
+     request.request({ query: 'foo', product: 'FOO', version: 'BAR' }, {}, 'http://localhost:8000/suggest')
+      .then(items => {
+        expect(items[0].title).to.equal('FOO BAR')
+        expect(requestCount).to.equal(1)
+        done()
+      })
+      .catch(err => { done(err) })
+   })
 })
 
 describe('request without response', () => {
