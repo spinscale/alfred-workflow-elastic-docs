@@ -4,3 +4,4 @@ node_modules
 elastic.alfredworkflow
 coverage
 lib/
+.nyc_output

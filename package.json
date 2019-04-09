@@ -10,7 +10,7 @@
   "scripts": {
     "package": "rm -f elastic.alfredworkflow && rm -fr node_modules && npm install --production && npm run package-zip && npm install",
     "package-zip": "zip -q -X -r elastic.alfredworkflow icon.png index.js info.plist node_modules icon.png logos src test package.json",
-    "test": "export AVA='alfy-works-with-this-for-tests' && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
+    "test": "export AVA='alfy-works-with-this-for-tests' && ./node_modules/.bin/nyc ./node_modules/.bin/_mocha"
   },
   "dependencies": {
     "alfy": "0.8.0",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "chai": "4.2.0",
-    "istanbul": "0.4.5",
+    "nyc": "13.3.0",
     "mocha": "6.1.2"
   }
 }
