@@ -8,7 +8,7 @@ An alfred workflow, that queries the Elastic documentation and allows you to ope
 
 ## Download
 
-You can download the workflow from [the packal alfred workflow repository](http://www.packal.org/), if you don't want to build it yourself.
+You can download the workflow from [the packal alfred workflow repository](http://www.packal.org/workflow/elastic-documentation-search), if you don't want to build it yourself.
 
 **Note**: You need to have node.js installed to get up and running. You can check by executing `node --version`, as you need a node version >= 10.0 (which, frankly, should be pretty standard nowadays).
 
