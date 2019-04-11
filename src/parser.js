@@ -1,5 +1,5 @@
 'use strict'
-const CURRENT_VERSION = '6.7'
+const CURRENT_VERSION = '7.0'
 
 const _ = require('underscore')
 
