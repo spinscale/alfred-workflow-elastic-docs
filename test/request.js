@@ -89,7 +89,7 @@ describe('request with response', () => {
   it('should return reject promise on error', (done) => {
     request.request({ query: 'foo' }, { timeout: 1, retry: 0}, 'http://localhost:8000/suggest')
       .catch(err => {
-        expect(err.message).to.equal('Request timed out')
+        expect(err.message).to.equal('Timeout awaiting \'request\' for 1ms')
         done()
       })
    })
