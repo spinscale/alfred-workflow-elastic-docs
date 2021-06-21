@@ -13,13 +13,13 @@
     "test": "export AVA='alfy-works-with-this-for-tests' && ./node_modules/.bin/nyc ./node_modules/.bin/_mocha"
   },
   "dependencies": {
-    "alfy": "0.10.0",
-    "striptags": "3.1.1",
+    "alfy": "0.11.0",
+    "striptags": "3.2.0",
     "underscore": "1.13.1"
   },
   "devDependencies": {
     "chai": "4.3.4",
     "nyc": "15.1.0",
-    "mocha": "8.4.0"
+    "mocha": "9.0.1"
   }
 }
