@@ -6,7 +6,7 @@ describe('parser', () => {
 
   it('should parse', (done) => {
     expect(parser.parse('foo').query).to.equal('foo')
-    expect(parser.parse('foo').version).to.equal('7.13')
+    expect(parser.parse('foo').version).to.equal('7.14')
     done()
   })
 
