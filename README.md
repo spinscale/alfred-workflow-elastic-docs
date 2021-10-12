@@ -1,3 +1,9 @@
+# This project is unmaintained!
+
+**Note**: This project is discontinued and has a successor at
+https://github.com/spinscale/alfred-workflow-elastic-docs.cr. *Please go
+with that project instead*.
+
 # Elasticsearch documentation alfred workflow
 
 An alfred workflow, that queries the Elastic documentation and allows you to open the documentation in a browser directly from Alfred.
